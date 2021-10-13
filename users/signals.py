@@ -17,7 +17,7 @@ def createProfile(sender, instance, created, **kwargs):
             email=user.email,
             name=user.first_name,
         )
-        subject = 'Welcome to DailySport'
+        subject = 'Welcome to SportsBreed'
         message = 'We are glad you are here!'
 
         send_mail(
@@ -28,7 +28,7 @@ def createProfile(sender, instance, created, **kwargs):
             fail_silently=False,
         )
 
-        subject = 'Welcome to DailySport'
+        subject = 'Welcome to SportsBreed'
         message = 'We are glad you are here!'
 
         send_mail(
@@ -54,3 +54,8 @@ post_save.connect(createProfile, sender=User)
 post_delete.connect(deleteUser, sender=Profile)
 ## below reciver decorator work same
 # @receiver(post_save, sender=Profile)
+
+### inside app.py
+## inherit inside users appconfig
+# def ready(self):
+#     import users.signals
