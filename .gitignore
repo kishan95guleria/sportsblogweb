@@ -1,4 +1,4 @@
 env/
 requirements.txt/
-Procfile/
-staticfiles/
+/Procfile
+/staticfiles
